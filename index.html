@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f5ee">
+  <meta name="description" content="Conoce Natu’Essence Vital, su portafolio de cuidado capilar y consulta por WhatsApp.">
+  <title>Natu’Essence Vital | Belleza que nace de la naturaleza</title>
+  <style>
+    :root {
+      --ink: #26352b;
+      --green: #53664b;
+      --green-deep: #344c3b;
+      --pink: #c77e8c;
+      --pink-pale: #f6e7e8;
+      --gold: #b79555;
+      --cream: #f8f5ee;
+      --white: #fffefa;
+      --muted: #667168;
+      --line: #e6e1d6;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      --shadow: 0 24px 60px rgba(47, 59, 44, .11);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--white); font-family: var(--sans); line-height: 1.6; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .announcement { padding: 9px 18px; color: #fff; background: var(--green-deep); text-align: center; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(255,254,250,.94); border-bottom: 1px solid rgba(230,225,214,.8); backdrop-filter: blur(12px); }
+    .nav-row { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; }
+    .brand-mark { width: 43px; height: 43px; color: var(--gold); }
+    .brand-name { display: block; color: var(--green-deep); font-family: var(--serif); font-size: 1.18rem; letter-spacing: .06em; line-height: 1.08; }
+    .brand-sub { display: block; margin-top: 4px; color: var(--muted); font-size: .64rem; letter-spacing: .11em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: #49594d; font-size: .91rem; }
+    .nav-links a:hover, .footer-links a:hover { color: var(--pink); }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border: 1px solid transparent; border-radius: 999px; background: var(--green-deep); color: #fff; font-size: .9rem; font-weight: 650; cursor: pointer; transition: transform .2s, background .2s, border-color .2s; }
+    .button:hover { transform: translateY(-2px); background: #263c2e; }
+    .button-light { color: var(--green-deep); background: transparent; border-color: var(--green-deep); }
+    .button-light:hover { color: #fff; background: var(--green-deep); }
+    .button-pink { background: var(--pink); }
+    .button-pink:hover { background: #ad6575; }
+    .menu-toggle { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; color: var(--green-deep); background: transparent; cursor: pointer; }
+    .hero { overflow: hidden; background: var(--cream); }
+    .hero-grid { min-height: 610px; display: grid; grid-template-columns: 1fr .92fr; align-items: center; gap: clamp(32px, 6vw, 80px); padding-block: 66px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 16px; color: var(--pink); font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .eyebrow::before { width: 28px; height: 1px; content: ""; background: var(--gold); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, .quote { font-family: var(--serif); font-weight: 400; }
+    h1 { max-width: 620px; margin-bottom: 20px; color: var(--green-deep); font-size: clamp(3rem, 6vw, 5.45rem); letter-spacing: -.045em; line-height: .99; }
+    h1 em { color: var(--pink); font-weight: 400; }
+    .hero-copy > p:not(.eyebrow) { max-width: 510px; margin-bottom: 30px; color: #59675c; font-size: 1.08rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 30px; color: var(--muted); font-size: .88rem; }
+    .hero-note svg { width: 19px; color: var(--gold); flex: 0 0 auto; }
+    .hero-visual { position: relative; min-height: 505px; }
+    .hero-photo { position: absolute; inset: 0 30px 0 30px; overflow: hidden; border-radius: 46% 46% 14px 14px; background: #e8dfcf; box-shadow: var(--shadow); }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+    .hero-seal { position: absolute; right: 0; bottom: 27px; width: 170px; min-height: 112px; padding: 19px 18px; border: 1px solid rgba(183,149,85,.5); border-radius: 50%; display: grid; place-items: center; color: var(--green-deep); background: rgba(255,254,250,.95); text-align: center; transform: rotate(7deg); }
+    .hero-seal strong { display: block; font-family: var(--serif); font-size: 1.15rem; font-weight: 400; }
+    .hero-seal span { display: block; font-size: .68rem; letter-spacing: .09em; text-transform: uppercase; }
+    .intro-strip { padding: 20px 0; border-bottom: 1px solid var(--line); background: var(--white); }
+    .intro-strip .wrap { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px 54px; color: #667168; font-size: .84rem; }
+    .intro-strip span { display: inline-flex; align-items: center; gap: 9px; }
+    .intro-strip b { color: var(--green); font-weight: 650; }
+    .intro-strip svg { width: 18px; height: 18px; color: var(--gold); }
+    section { scroll-margin-top: 95px; }
+    .section { padding: 96px 0; }
+    .section-heading { max-width: 670px; margin: 0 auto 42px; text-align: center; }
+    .section-heading .eyebrow { justify-content: center; }
+    h2 { margin-bottom: 13px; color: var(--green-deep); font-size: clamp(2.25rem, 4vw, 3.6rem); letter-spacing: -.035em; line-height: 1.08; }
+    .section-heading > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 1rem; }
+    .products { background: var(--white); }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .product-card { overflow: hidden; border: 1px solid var(--line); border-radius: 15px; background: #fff; transition: transform .22s, box-shadow .22s; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .product-image { height: 295px; overflow: hidden; background: var(--cream); }
+    .product-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 45%; transition: transform .35s; }
+    .product-card:hover .product-image img { transform: scale(1.035); }
+    .product-image.family img { object-position: center 53%; }
+    .product-body { padding: 23px 22px 24px; }
+    .product-type { margin-bottom: 7px; color: var(--pink); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .product-body h3 { margin-bottom: 9px; color: var(--green-deep); font-family: var(--serif); font-size: 1.55rem; font-weight: 400; }
+    .product-body p { min-height: 52px; margin-bottom: 14px; color: var(--muted); font-size: .92rem; }
+    .product-detail { margin-bottom: 19px; color: #52614f; font-size: .82rem; }
+    .product-body .button { width: 100%; }
+    .product-disclaimer { margin: 22px 0 0; color: var(--muted); font-size: .82rem; text-align: center; }
+    .story { background: #f4f1e8; }
+    .story-grid { display: grid; grid-template-columns: .92fr 1fr; align-items: center; gap: clamp(36px, 7vw, 100px); }
+    .brand-art { overflow: hidden; border: 1px solid #eee9df; border-radius: 13px; background: #fff; box-shadow: var(--shadow); }
+    .brand-art img { width: 100%; aspect-ratio: 1.36; object-fit: cover; object-position: center 38%; }
+    .story-copy h2 { margin-bottom: 18px; }
+    .story-copy > p:not(.eyebrow) { max-width: 535px; color: #59675c; }
+    .story-points { display: grid; gap: 14px; margin: 25px 0 30px; padding: 0; list-style: none; }
+    .story-points li { display: flex; align-items: flex-start; gap: 12px; color: #49574d; }
+    .story-points svg { width: 19px; height: 19px; margin-top: 3px; color: var(--pink); flex: 0 0 auto; }
+    .routine { padding: 84px 0; background: #fff; }
+    .routine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .routine-step { padding: 27px 25px; border-top: 1px solid var(--gold); }
+    .step-no { color: var(--pink); font-family: var(--serif); font-size: 1.12rem; }
+    .routine-step h3 { margin: 9px 0; color: var(--green-deep); font-family: var(--serif); font-size: 1.45rem; font-weight: 400; }
+    .routine-step p { margin-bottom: 0; color: var(--muted); font-size: .93rem; }
+    .quote { margin: 32px auto 0; color: var(--green-deep); font-size: clamp(1.65rem, 3vw, 2.5rem); text-align: center; }
+    .contact { padding: 90px 0; color: #fff; background: var(--green-deep); }
+    .contact-grid { display: grid; grid-template-columns: .82fr 1fr; align-items: start; gap: clamp(38px, 8vw, 105px); }
+    .contact .eyebrow { color: #e5b2bc; }
+    .contact h2 { max-width: 500px; margin-bottom: 18px; color: #fff; }
+    .contact-copy > p:not(.eyebrow) { max-width: 440px; margin-bottom: 25px; color: #d8dfd7; }
+    .contact-meta { display: grid; gap: 13px; margin-top: 26px; color: #e8ece6; font-size: .93rem; }
+    .contact-meta span { display: flex; align-items: center; gap: 11px; }
+    .contact-meta svg { width: 19px; color: #e5c987; flex: 0 0 auto; }
+    .form-card { padding: 30px; border-radius: 15px; color: var(--ink); background: var(--white); box-shadow: var(--shadow); }
+    .form-card h3 { margin-bottom: 6px; color: var(--green-deep); font-family: var(--serif); font-size: 1.7rem; font-weight: 400; }
+    .form-card > p { margin-bottom: 22px; color: var(--muted); font-size: .88rem; }
+    .field { display: grid; gap: 6px; margin-bottom: 14px; }
+    .field label { color: #455447; font-size: .82rem; font-weight: 650; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 47px; padding: 11px 13px; border: 1px solid #dcded6; border-radius: 8px; color: var(--ink); background: #fff; outline: none; }
+    .field textarea { min-height: 94px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(83,102,75,.12); }
+    .form-card .button { width: 100%; margin-top: 3px; }
+    .form-note, .form-status { margin: 12px 0 0; color: var(--muted); font-size: .78rem; }
+    .form-status { min-height: 1.5em; color: var(--green-deep); }
+    .site-footer { padding: 30px 0; color: #e0e7df; background: #273c30; }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .footer-brand .brand-name { color: #fff; }
+    .footer-brand .brand-sub { color: #bdc8bd; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; font-size: .83rem; }
+    .copyright { margin: 22px 0 0; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.14); color: #bdc8bd; font-size: .76rem; }
+    .chat-launch { position: fixed; right: 22px; bottom: 22px; z-index: 30; width: 60px; height: 60px; display: grid; place-items: center; border: 0; border-radius: 50%; color: #fff; background: var(--pink); box-shadow: 0 12px 26px rgba(53, 48, 44, .24); cursor: pointer; }
+    .chat-launch:hover { background: #ae6877; }
+    .chat-launch svg { width: 25px; }
+    .chat-panel { position: fixed; right: 22px; bottom: 94px; z-index: 31; width: min(360px, calc(100vw - 32px)); overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: #fffefa; box-shadow: 0 20px 55px rgba(35,48,37,.24); }
+    .chat-panel[hidden] { display: none; }
+    .chat-head { padding: 17px 18px; color: #fff; background: var(--green-deep); }
+    .chat-head strong { display: block; font-family: var(--serif); font-size: 1.18rem; font-weight: 400; }
+    .chat-head span { display: block; margin-top: 2px; color: #d2dfd2; font-size: .74rem; }
+    .chat-messages { height: 230px; overflow-y: auto; padding: 15px; background: #f8f6ef; }
+    .bubble { width: fit-content; max-width: 90%; margin: 0 0 10px; padding: 10px 12px; border-radius: 12px 12px 12px 3px; color: #435146; background: #fff; font-size: .85rem; }
+    .bubble.user { margin-left: auto; border-radius: 12px 12px 3px 12px; color: #fff; background: var(--green); }
+    .chat-quick { display: flex; flex-wrap: wrap; gap: 7px; padding: 11px 13px; border-top: 1px solid var(--line); }
+    .quick-button { padding: 7px 10px; border: 1px solid #d7dfd5; border-radius: 999px; color: var(--green-deep); background: white; font-size: .73rem; cursor: pointer; }
+    .quick-button:hover { border-color: var(--green); background: #f3f6f0; }
+    .chat-input-row { display: flex; gap: 8px; padding: 0 13px 13px; }
+    .chat-input-row input { min-width: 0; flex: 1; padding: 10px 11px; border: 1px solid #d7dfd5; border-radius: 9px; font-size: .85rem; }
+    .chat-send { width: 42px; border: 0; border-radius: 9px; color: #fff; background: var(--pink); cursor: pointer; }
+    .chat-send svg { width: 18px; vertical-align: middle; }
+    @media (max-width: 900px) {
+      .nav-links { gap: 17px; }
+      .hero-grid { min-height: auto; grid-template-columns: 1fr .82fr; gap: 30px; }
+      .hero-visual { min-height: 440px; }
+      .hero-photo { inset-inline: 14px; }
+      .product-grid { gap: 15px; }
+      .product-image { height: 245px; }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .announcement { font-size: .67rem; }
+      .nav-row { min-height: 70px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .brand-name { font-size: 1.04rem; }
+      .brand-sub { font-size: .58rem; }
+      .menu-toggle { display: grid; place-items: center; }
+      .menu-toggle svg { width: 20px; }
+      .nav-links { position: absolute; top: 69px; left: 0; right: 0; display: none; align-items: stretch; gap: 0; padding: 8px 16px 16px; border-bottom: 1px solid var(--line); background: var(--white); }
+      .nav-links.open { display: grid; }
+      .nav-links a { padding: 12px 6px; border-bottom: 1px solid #eeeae1; }
+      .nav-links .button { margin-top: 12px; }
+      .hero-grid { grid-template-columns: 1fr; padding-block: 52px 42px; }
+      .hero-copy { max-width: 560px; }
+      h1 { max-width: 520px; font-size: clamp(3rem, 14vw, 4.6rem); }
+      .hero-copy > p:not(.eyebrow) { font-size: 1rem; }
+      .hero-visual { min-height: 420px; max-width: 480px; width: 100%; margin: 0 auto; }
+      .hero-photo { inset: 0 18px 0 18px; }
+      .hero-seal { right: -2px; bottom: 18px; width: 145px; min-height: 96px; }
+      .intro-strip .wrap { justify-content: flex-start; gap: 12px 24px; }
+      .section { padding: 72px 0; }
+      .section-heading { margin-bottom: 31px; }
+      .product-grid { grid-template-columns: 1fr; gap: 18px; }
+      .product-card { display: grid; grid-template-columns: .85fr 1fr; }
+      .product-image { height: 100%; min-height: 255px; }
+      .product-body { padding: 19px 17px; }
+      .product-body p { min-height: auto; }
+      .product-body h3 { font-size: 1.32rem; }
+      .product-body .button { min-height: 43px; padding-inline: 13px; font-size: .82rem; }
+      .story-grid, .contact-grid { grid-template-columns: 1fr; }
+      .brand-art { max-width: 520px; margin-inline: auto; }
+      .story-copy { order: -1; }
+      .routine { padding: 68px 0; }
+      .routine-grid { grid-template-columns: 1fr; gap: 10px; }
+      .routine-step { padding: 22px 10px 22px 18px; }
+      .contact { padding: 70px 0; }
+      .form-card { padding: 23px 19px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+      .copyright { margin-top: 19px; }
+      .chat-launch { right: 16px; bottom: 16px; width: 56px; height: 56px; }
+      .chat-panel { right: 16px; bottom: 83px; }
+    }
+    @media (max-width: 430px) {
+      .hero-actions { display: grid; }
+      .hero-actions .button { width: 100%; }
+      .hero-visual { min-height: 365px; }
+      .product-card { grid-template-columns: 1fr; }
+      .product-image { height: 265px; min-height: 0; }
+      .product-body { padding: 19px; }
+      .intro-strip .wrap { display: grid; }
+      .footer-links { gap: 12px 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Cuidado capilar con inspiración botánica</div>
+  <header class="site-header">
+    <div class="wrap nav-row">
+      <a class="brand" href="#inicio" aria-label="Natu’Essence Vital, inicio">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 52C20 45 18 30 32 12c14 18 12 33 0 40Z" stroke="currentColor" stroke-width="2.2"/>
+          <path d="M30 48C16 48 8 39 8 25c14 1 23 8 24 22M34 48c14 0 22-9 22-23-14 1-23 8-24 22" stroke="currentColor" stroke-width="2.2"/>
+          <path d="M20 51c4-5 8-7 12-7s8 2 12 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M32 5v3M17 12l2 2M47 12l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span><span class="brand-name">Natu’Essence Vital</span><span class="brand-sub">Belleza que nace de la naturaleza</span></span>
+      </a>
+      <nav class="nav-links" id="mainNav" aria-label="Navegación principal">
+        <a href="#productos">Productos</a>
+        <a href="#esencia">Nuestra esencia</a>
+        <a href="#como-pedir">Cómo pedir</a>
+        <a href="#contacto" class="button button-light">Contáctanos</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Rituales para tu cabello</p>
+          <h1>Belleza que nace <em>desde la raíz.</em></h1>
+          <p>Conoce las alternativas capilares de Natu’Essence Vital y encuentra una rutina que se sienta cercana, sencilla y hecha para cuidar tu cabello.</p>
+          <div class="hero-actions">
+            <a class="button" href="#productos">Explorar productos</a>
+            <a class="button button-light" href="https://wa.me/c/573182279476" target="_blank" rel="noopener">Ver catálogo en WhatsApp</a>
+          </div>
+          <div class="hero-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z"/><path d="M9 11c2.1.1 3.5-1.3 3.5-3.5 2.1 2.1 1 5.2-1.6 5.2-1 0-1.5-.5-1.9-1.7Z"/></svg>
+            <span>Consulta referencias, precios y disponibilidad por WhatsApp.</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Productos capilares Natu’Essence">
+          <div class="hero-photo"><img src="assets/shampoo.jpg" alt="Shampoo Natu’Essence con romero, quina y canela" fetchpriority="high"></div>
+          <div class="hero-seal"><span>Una rutina inspirada en la naturaleza</span><strong>Natu’Essence</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="intro-strip" aria-label="Características de la marca">
+      <div class="wrap">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 4C10 4 5 8 5 14c0 3 2 5 5 5 6 0 10-6 10-15Z"/><path d="M4 21c2-5 6-8 11-11"/></svg><b>Cuidado capilar</b> para tu rutina</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3c2.2 3.4 6 7.3 6 11.2a6 6 0 0 1-12 0C6 10.3 9.8 6.4 12 3Z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></svg><b>Ingredientes destacados</b> en cada etiqueta</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 7v5l3 2"/></svg><b>Atención directa</b> por WhatsApp</span>
+      </div>
+    </div>
+
+    <section class="section products" id="productos">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Catálogo</p>
+          <h2>Elige lo que necesita tu rutina</h2>
+          <p>Explora algunos productos del portafolio y escríbenos para consultar las presentaciones y referencias disponibles.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image"><img src="assets/shampoo.jpg" alt="Envase de shampoo Natu’Essence de 300 ml" loading="lazy"></div>
+            <div class="product-body">
+              <div class="product-type">Limpieza capilar</div>
+              <h3>Shampoo</h3>
+              <p>Una alternativa para la limpieza y el cuidado diario del cabello.</p>
+              <div class="product-detail">Romero, quina y canela · 300 ml</div>
+              <button class="button button-light product-ask" type="button" data-product="Shampoo">Consultar este producto</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image"><img src="assets/tratamiento.jpg" alt="Tratamiento capilar Natu’Essence con coco y manteca de karité" loading="lazy"></div>
+            <div class="product-body">
+              <div class="product-type">Nutrición capilar</div>
+              <h3>Tratamiento capilar</h3>
+              <p>Una opción para complementar el cuidado y la nutrición del cabello.</p>
+              <div class="product-detail">Coco y manteca de karité · 300 ml</div>
+              <button class="button button-light product-ask" type="button" data-product="Tratamiento capilar">Consultar este producto</button>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-image family"><img src="assets/kit.jpg" alt="Imagen de presentación del portafolio de Natu’Essence" loading="lazy"></div>
+            <div class="product-body">
+              <div class="product-type">Más del portafolio</div>
+              <h3>Otras alternativas capilares</h3>
+              <p>Consulta por tónico capilar, acondicionador y crema para peinar.</p>
+              <div class="product-detail">Referencias y disponibilidad por WhatsApp</div>
+              <button class="button button-light product-ask" type="button" data-product="Otras alternativas capilares">Consultar el portafolio</button>
+            </div>
+          </article>
+        </div>
+        <p class="product-disclaimer">Los precios y la disponibilidad se confirman directamente con la empresa.</p>
+      </div>
+    </section>
+
+    <section class="section story" id="esencia">
+      <div class="wrap story-grid">
+        <div class="brand-art"><img src="assets/tonico.jpg" alt="Identidad gráfica de Natu’Essence: productos 100 % orgánicos" loading="lazy"></div>
+        <div class="story-copy">
+          <p class="eyebrow">Nuestra esencia</p>
+          <h2>Un cuidado cercano, hecho para acompañarte</h2>
+          <p>Natu’Essence Vital es una iniciativa dedicada a la producción y comercialización de productos capilares. Su propuesta reúne alternativas para el cuidado del cabello y una atención directa a quienes desean conocer el portafolio.</p>
+          <ul class="story-points">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Una oferta centrada en productos para el cuidado capilar.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Atención directa para resolver dudas antes de realizar un pedido.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Alcance comercial reportado en Mahates, Cartagena y Barranquilla.</span></li>
+          </ul>
+          <a class="button" href="#contacto">Conversemos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="routine" id="como-pedir">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Compra sencilla</p>
+          <h2>¿Cómo hacer tu pedido?</h2>
+          <p>La página te conecta con el canal de atención para confirmar detalles directamente.</p>
+        </div>
+        <div class="routine-grid">
+          <article class="routine-step"><span class="step-no">Paso 01</span><h3>Explora</h3><p>Revisa las alternativas del portafolio y elige el producto que quieres consultar.</p></article>
+          <article class="routine-step"><span class="step-no">Paso 02</span><h3>Escríbenos</h3><p>Envía una consulta por WhatsApp con tu producto de interés y ciudad.</p></article>
+          <article class="routine-step"><span class="step-no">Paso 03</span><h3>Confirma</h3><p>Consulta el precio, la disponibilidad y las opciones de entrega antes de comprar.</p></article>
+        </div>
+        <p class="quote">“Belleza que nace de la naturaleza.”</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Hablemos</p>
+          <h2>¿Tienes una pregunta sobre tu próximo cuidado?</h2>
+          <p>Déjanos tus datos y se abrirá WhatsApp con tu consulta lista para enviar. La atención y confirmación del pedido se realizan directamente por ese canal.</p>
+          <div class="contact-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.2A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 9c.8 2 2.2 3.4 4.3 4.2"/></svg><a href="https://wa.me/c/573182279476" target="_blank" rel="noopener">Catálogo y atención en WhatsApp</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s7-4.4 7-11a7 7 0 0 0-14 0c0 6.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>Mahates · Cartagena · Barranquilla</span>
+          </div>
+        </div>
+        <form class="form-card" id="leadForm">
+          <h3>Cuéntanos qué buscas</h3>
+          <p>Completa el formulario para preparar tu mensaje.</p>
+          <div class="field"><label for="name">Tu nombre</label><input id="name" name="name" autocomplete="name" required placeholder="¿Cómo te llamas?"></div>
+          <div class="field"><label for="city">Ciudad o municipio</label><input id="city" name="city" autocomplete="address-level2" required placeholder="Ej. Cartagena"></div>
+          <div class="field"><label for="interest">Producto de interés</label><select id="interest" name="interest" required><option value="">Selecciona una opción</option><option>Shampoo</option><option>Tratamiento capilar</option><option>Tónico capilar</option><option>Acondicionador</option><option>Crema para peinar</option><option>Quiero conocer el portafolio</option></select></div>
+          <div class="field"><label for="message">Tu consulta <span style="font-weight:400">(opcional)</span></label><textarea id="message" name="message" placeholder="Escribe tu pregunta"></textarea></div>
+          <button class="button button-pink" type="submit">Continuar por WhatsApp</button>
+          <p class="form-note">No se guardan datos en esta página. WhatsApp se abrirá para que revises y envíes el mensaje.</p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <a class="brand footer-brand" href="#inicio">
+          <svg class="brand-mark" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 52C20 45 18 30 32 12c14 18 12 33 0 40Z" stroke="currentColor" stroke-width="2.2"/><path d="M30 48C16 48 8 39 8 25c14 1 23 8 24 22M34 48c14 0 22-9 22-23-14 1-23 8-24 22" stroke="currentColor" stroke-width="2.2"/><path d="M20 51c4-5 8-7 12-7s8 2 12 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span><span class="brand-name">Natu’Essence Vital</span><span class="brand-sub">Belleza que nace de la naturaleza</span></span>
+        </a>
+        <div class="footer-links"><a href="#productos">Productos</a><a href="#esencia">Nuestra esencia</a><a href="#contacto">Contacto</a><a href="https://wa.me/c/573182279476" target="_blank" rel="noopener">Catálogo</a></div>
+      </div>
+      <p class="copyright">© <span id="year"></span> Natu’Essence Vital. Consulta precios, referencias y disponibilidad por WhatsApp.</p>
+    </div>
+  </footer>
+
+  <button class="chat-launch" id="chatToggle" type="button" aria-label="Abrir asistente virtual" aria-expanded="false" aria-controls="chatPanel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.6L3 21l1.9-5.2a8.5 8.5 0 1 1 15.6-4.3Z"/><path d="M8 10h.01M12 10h.01M16 10h.01" stroke-width="2.6" stroke-linecap="round"/></svg>
+  </button>
+  <aside class="chat-panel" id="chatPanel" hidden aria-label="Asistente virtual">
+    <div class="chat-head"><strong>Asistente Natu’Essence</strong><span>Respuestas rápidas sobre el portafolio</span></div>
+    <div class="chat-messages" id="chatMessages" aria-live="polite"><div class="bubble">¡Hola! Puedo orientarte sobre el catálogo, los pedidos y los ingredientes que aparecen en las etiquetas.</div></div>
+    <div class="chat-quick">
+      <button class="quick-button" type="button" data-question="¿Qué productos tienen?">Ver productos</button>
+      <button class="quick-button" type="button" data-question="¿Cómo hago un pedido?">Cómo pedir</button>
+      <button class="quick-button" type="button" data-question="¿Qué ingredientes tiene el shampoo?">Ingredientes</button>
+    </div>
+    <form class="chat-input-row" id="chatForm"><input id="chatInput" aria-label="Escribe tu pregunta" placeholder="Escribe una pregunta…" autocomplete="off"><button class="chat-send" type="submit" aria-label="Enviar pregunta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m4 4 16 8-16 8 3-8-3-8Z"/><path d="M7 12h13"/></svg></button></form>
+  </aside>
+
+  <script>
+    const WHATSAPP_NUMBER = "573182279476";
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    });
+    mainNav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }));
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll(".product-ask").forEach(button => button.addEventListener("click", () => {
+      document.getElementById("interest").value = button.dataset.product === "Otras alternativas capilares" ? "Quiero conocer el portafolio" : button.dataset.product;
+      document.getElementById("contacto").scrollIntoView({ behavior: "smooth" });
+      document.getElementById("name").focus({ preventScroll: true });
+    }));
+
+    document.getElementById("leadForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const message = [
+        "Hola, quiero conocer más sobre los productos de Natu’Essence Vital.",
+        `Mi nombre es ${form.get("name")} y estoy en ${form.get("city")}.`,
+        `Me interesa: ${form.get("interest")}.`,
+        form.get("message") ? `Mi consulta: ${form.get("message")}` : ""
+      ].filter(Boolean).join("\n");
+      document.getElementById("formStatus").textContent = "Se abrirá WhatsApp con tu mensaje listo para revisar y enviar.";
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+    });
+
+    const chatPanel = document.getElementById("chatPanel");
+    const chatToggle = document.getElementById("chatToggle");
+    chatToggle.addEventListener("click", () => {
+      const isHidden = chatPanel.hidden;
+      chatPanel.hidden = !isHidden;
+      chatToggle.setAttribute("aria-expanded", String(isHidden));
+      if (isHidden) document.getElementById("chatInput").focus();
+    });
+    const chatMessages = document.getElementById("chatMessages");
+    function addBubble(text, who = "bot") {
+      const bubble = document.createElement("div");
+      bubble.className = `bubble${who === "user" ? " user" : ""}`;
+      bubble.textContent = text;
+      chatMessages.appendChild(bubble);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    function answerQuestion(question) {
+      const q = question.toLowerCase();
+      if (q.includes("producto") || q.includes("catálogo") || q.includes("catalogo")) return "El portafolio incluye shampoo, tratamiento capilar y otras alternativas como tónico, acondicionador y crema para peinar. Puedes consultar el catálogo por WhatsApp.";
+      if (q.includes("pedido") || q.includes("compr")) return "Elige un producto, completa el formulario de contacto y continúa por WhatsApp. Allí puedes confirmar precio, disponibilidad y entrega.";
+      if (q.includes("shampoo") || q.includes("ingrediente")) return "La etiqueta del shampoo mostrado menciona romero, quina y canela. La presentación de la imagen es de 300 ml.";
+      if (q.includes("tratamiento") || q.includes("coco") || q.includes("karité")) return "La etiqueta del tratamiento mostrado menciona coco y manteca de karité. La presentación de la imagen es de 300 ml.";
+      if (q.includes("precio") || q.includes("valor")) return "Los precios vigentes se confirman directamente con la empresa por WhatsApp.";
+      if (q.includes("dónde") || q.includes("donde") || q.includes("ciudad") || q.includes("entrega")) return "El alcance comercial indicado para la empresa comprende Mahates, Cartagena y Barranquilla. Consulta por WhatsApp las opciones disponibles para tu ubicación.";
+      return "Puedo orientarte sobre productos, ingredientes, pedidos y zonas de atención. Para otra consulta, escríbenos directamente por WhatsApp.";
+    }
+    function sendQuestion(question) {
+      const clean = question.trim();
+      if (!clean) return;
+      addBubble(clean, "user");
+      addBubble(answerQuestion(clean));
+    }
+    document.querySelectorAll(".quick-button").forEach(button => button.addEventListener("click", () => sendQuestion(button.dataset.question)));
+    document.getElementById("chatForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const input = document.getElementById("chatInput");
+      sendQuestion(input.value);
+      input.value = "";
+    });
+  </script>
+</body>
+</html>

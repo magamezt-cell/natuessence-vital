@@ -1,0 +1,25 @@
+NATU’ESSENCE VITAL — PÁGINA WEB
+
+ARCHIVOS
+- index.html: página web adaptable a computadora y celular.
+- assets/: imágenes entregadas para la marca y los productos.
+
+PARA ABRIRLA
+1. Descomprime el archivo ZIP completo.
+2. Abre la carpeta NatuEssence_pagina.
+3. Abre index.html en un navegador actualizado.
+
+FUNCIONES INCLUIDAS
+- Catálogo con las imágenes y descripciones de los productos.
+- Botones que llevan a la consulta de cada producto.
+- Formulario que prepara una consulta y la abre en WhatsApp.
+- Asistente virtual de demostración con respuestas frecuentes predefinidas.
+- Menú adaptable para pantallas pequeñas.
+
+ANTES DE PUBLICAR
+- Verifica que el catálogo y el número de WhatsApp sigan vigentes. El documento de mercadeo entregado incluye el enlace wa.me/c/573005309190; la página usa ese contacto.
+- Confirma los precios, disponibilidad, entregas y presentaciones. Por eso no se fijaron precios en la página.
+- El formulario abre WhatsApp; no almacena datos ni procesa pagos.
+- El asistente es un prototipo local con respuestas predefinidas, no está conectado a una IA generativa ni a una base de datos.
+
+Para publicar la página en internet, sube index.html y la carpeta assets a un servicio de alojamiento de páginas estáticas. Mantén los archivos juntos para que las imágenes carguen correctamente.
